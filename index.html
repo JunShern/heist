@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gossip Girl - Mystery Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background-color: #e5ddd5;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23e5ddd5" width="100" height="100"/><path fill="%23d9d3cc" d="M0 0 L50 50 L0 100 Z M50 50 L100 0 L100 100 Z" opacity="0.1"/></svg>');
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background-color: #075e54;
+            color: white;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .back-arrow {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .contact-name {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+        }
+
+        .chat-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px 8px;
+            background-color: #e5ddd5;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23e5ddd5" width="100" height="100"/><path fill="%23d9d3cc" d="M0 0 L50 50 L0 100 Z M50 50 L100 0 L100 100 Z" opacity="0.1"/></svg>');
+        }
+
+        .date-divider {
+            text-align: center;
+            margin: 12px 0;
+        }
+
+        .date-label {
+            display: inline-block;
+            background-color: #e1f3fb;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #54656f;
+            box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+        }
+
+        .message {
+            margin: 4px 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .message-bubble {
+            max-width: 75%;
+            background-color: #fff;
+            padding: 6px 10px 8px;
+            border-radius: 8px;
+            box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+            position: relative;
+        }
+
+
+
+        .message-text {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #111;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .message-image {
+            max-width: 100%;
+            border-radius: 8px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .image-bubble {
+            padding: 4px;
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: #667781;
+            margin-top: 4px;
+            text-align: right;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-arrow">‹</div>
+            <img src="profile_pic.jpg" alt="Profile" class="profile-pic" onerror="this.style.display='none'">
+            <div class="header-info">
+                <div class="contact-name">Gossip Girl</div>
+            </div>
+            <div class="header-icons">
+                <span>📹</span>
+                <span>📞</span>
+                <span>⋮</span>
+            </div>
+        </div>
+        
+        <div class="chat-area" id="chatArea">
+            <div id="messages"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script>
+        async function loadMessages() {
+            const response = await fetch('texts.csv');
+            const csvText = await response.text();
+            
+            Papa.parse(csvText, {
+                header: true,
+                dynamicTyping: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    const messages = results.data;
+                    const messagesContainer = document.getElementById('messages');
+                    let currentDate = null;
+
+                    messages.forEach(msg => {
+                        const messageDate = msg.Date ? msg.Date.trim() : '';
+                        
+                        // Add date divider if date changed
+                        if (messageDate && messageDate !== currentDate) {
+                            currentDate = messageDate;
+                            const dateDivider = document.createElement('div');
+                            dateDivider.className = 'date-divider';
+                            
+                            // Format date nicely
+                            const formattedDate = formatDate(messageDate);
+                            dateDivider.innerHTML = `<div class="date-label">${formattedDate}</div>`;
+                            messagesContainer.appendChild(dateDivider);
+                        }
+
+                        // Add message
+                        const messageDiv = document.createElement('div');
+                        messageDiv.className = 'message';
+                        
+                        const messageText = msg.Message ? msg.Message.trim() : '';
+                        
+                        // Check if message contains an image tag
+                        const imgMatch = messageText.match(/^<img>(.*?)<\/img>$/);
+                        
+                        if (imgMatch) {
+                            // It's an image message
+                            const imagePath = imgMatch[1];
+                            messageDiv.innerHTML = `
+                                <div class="message-bubble image-bubble">
+                                    <img src="${escapeHtml(imagePath)}" alt="Image" class="message-image">
+                                </div>
+                            `;
+                        } else {
+                            // It's a text message
+                            messageDiv.innerHTML = `
+                                <div class="message-bubble">
+                                    <div class="message-text">${escapeHtml(messageText)}</div>
+                                </div>
+                            `;
+                        }
+                        
+                        messagesContainer.appendChild(messageDiv);
+                    });
+
+                    // Scroll to bottom
+                    const chatArea = document.getElementById('chatArea');
+                    chatArea.scrollTop = chatArea.scrollHeight;
+                }
+            });
+        }
+
+        function formatDate(dateStr) {
+            // Parse date in format 2024/02/16
+            const parts = dateStr.split('/');
+            if (parts.length === 3) {
+                const date = new Date(parts[0], parts[1] - 1, parts[2]);
+                const today = new Date();
+                const yesterday = new Date(today);
+                yesterday.setDate(yesterday.getDate() - 1);
+
+                // Check if today or yesterday
+                if (date.toDateString() === today.toDateString()) {
+                    return 'Today';
+                } else if (date.toDateString() === yesterday.toDateString()) {
+                    return 'Yesterday';
+                }
+
+                // Format as "16 February 2024"
+                const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                               'July', 'August', 'September', 'October', 'November', 'December'];
+                return `${parseInt(parts[2])} ${months[date.getMonth()]} ${parts[0]}`;
+            }
+            return dateStr;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Load messages when page loads
+        loadMessages();
+    </script>
+</body>
+</html>

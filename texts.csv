@@ -1,0 +1,103 @@
+Date,Trigger,ID,Message
+2024/02/15,1900,TEXT000,"A little birdie tells me that you’re in for an exciting night! I’ll be keeping an eye on things, so why don’t you both enjoy yourselves -- while you can.
+
+XOXO, Gossip Girl."
+2024/02/15,2140,TEXT001,"Uh-oh. Looks like someone’s lost their ring!
+
+I'll have you know that you didn't lose it -- it was taken. But don’t worry, that sticky-fingered thief hasn't gone far. Maybe you can still find them and get your ring back?"
+,,,<img>lost.jpg</img>
+2024/02/15,2150,TEXT002,"I got a glimpse of the thieves but they've just fled the scene. Well done getting hold of the bag, though! If you find any clues in their belongings, now might be a good time to investigate…"
+,,,<img>thieves.jpg</img>
+2024/02/15,2210,TEXT003,"It seems you’ve managed to get yourselves into the thieves’ room. That’s convenient; maybe you’ll find some clues to help you get your ring back?
+
+I haven’t introduced myself, but you can just think of me as Gossip Girl! I’ve got eyes all around town, and luckily for you, we’re on the same side.
+
+The thief was last spotted on the other side of town, and I have my little birds out searching but I expect they’re going to lie low for the night. I’d suggest you get some rest too, since we may have a chance to find out what's going on tomorrow if we’re sharp.
+
+But while you’re there, you might as well even indulge yourselves -- the room is already paid for, after all."
+2024/02/16,900,TEXT101,"Good morning, upper east siders!
+
+I’ve had a productive night, and my network has come back with important information: The thief we’re dealing with is part of a criminal organization that steals valuable jewels and resells them in the black market. They have a network of agents worldwide, who are sent out to acquire jewels and deliver them to various collection points where the organization operates.
+
+I've been interested in them for quite a long time now, and I sense that you have quite a rare opportunity here to learn more about them -- and maybe even get back your ring. Why don't you play detective a little while you're here?"
+2024/02/16,Solved AQUARIA,TEXT102,"Well well well, you've both got a little bit of skill in this, don't you? 
+
+I've gotten word that the thief has also started moving. I'll keep you updated of their location whenever I have it, but if you keep following the trail, I suspect you may be able to intercept the thief before they send your ring off. Godspeed!"
+2024/02/16,Solved DON DON DONKI,TEXT103,Heads up! The thief has been spotted getting on the MRT at Bukit Bintang.
+2024/02/16,Arrived at TTDI,TEXT104,"I'm impressed you made it all the way to TTDI.
+
+We were tracking the thief all this way too, but my eyes on the ground have now lost sight of them. They say the thief ducked into some stairs near Mini Tanker, then apparently disappeared into thin air? Where could they have gone?"
+2024/02/16,,,<img>locker.jpg</img>
+2024/02/16,After Locker & Loft,TEXT105,"Bummer, I'm so annoyed that we didn't find the ring or catch the thief! I think we might have spooked The Magpie. What a frustrating conclusion after the long day we've all had.
+
+But I'll admit I'm impressed -- you really went a long way today and actually found the secret drop location!
+
+None of my eyes have seen the thief for a while now, so I fear that the trail has gone cold. It may be some time before we get more news, but I'll keep searching and keep you updated. Stay out of trouble in the meanwhile, won't you?
+
+You know you love me;
+XOXO, Gossip Girl. 😘"
+2024/03/12,"Evening, 6:00pm",TEXT201,"Oh dear, I think you’re gonna want to see this. Your beau is in a bit of a pickle -- I think you’d better hurry up and save him before something happens."
+2024/03/12,With above,,<img>kidnapped.jpg</img>
+2024/03/12,Shortly after the last,,"I don't know where he is, but my eyes have been all over the ins-and-outs of Uptown Residences. He hasn't left the compound!
+
+Time for a game of Hide 'N Seek?"
+2024/03/12,After Chloe finds me,,"Well done! You not only saved him, but it seems like we finally have a new lead on The Magpie? Let's get to the bottom of this!"
+2024/03/12,,,"Talk about turning lemons into lemonade!
+
+I think you have quite the opportunity here: I bet the thief thinks you’re all tied up now, but you just might get the drop on them. I can feel inklings of a plan coming to me, but in the meantime, I’ve taken the liberty of making certain arrangements… 
+
+How do you both feel about a weekend getaway? 😉"
+2024/03/12,,,<img>flights.jpg</img>
+2024/03/13,"Wednesday morning, 9AM",,"Selamat pagi, upper east siders! I've spent the night with my two best friends: Sche Ming and Plot Ting!
+
+Here’s what I’m thinking: We know exactly what time and where they’re going to do the drop, and we even know what The Director is going to be wearing! So why don't we go there, dress up as The Director, and _receive the payload in his place_?"
+2024/03/13,with above,,"It sounds crazy, but you might actually be the perfect team to pull it off. We need one person to disguise as The Director, and another to distract him:
+1. From what I've heard about The Director of The Magpie, your husband will be the perfect decoy -- my network tells me that your husband looks identical to The Director in height and features (hubs is slightly more handsome tbh, something about his jawline just mogs).
+2. And you, you need to keep an eye out for the real Director and keep him distracted.
+
+Oooooh my skin gets tingly just thinking about it! Don't we all just looove a good heist?"
+2024/03/13,with above,,"Of course, I'm going to come along for the trip too -- how can I miss out on all the fun?"
+2024/03/14,Thursday morning,,"Tomorrow's the big day! Let's go through a rundown of the plan:
+
+ARRIVAL
+Your flight arrival is a little tight, but we'll have to make it work. I've arranged for a driver to meet you at the airport, and take you to your hotel to drop off your things. Check-in quickly, but you won't have time to change, so make sure you arrive in your operation-appropriate outfits.
+
+GETTING THERE
+Once you've checked in and left your bags in the room, go straight to the Potato Head Beach Club! The club is a 10-minute walk from your hotel.
+
+OPERATION
+- I'm going to arrive a little earlier to survey the area and see if I can spot our targets. I will keep you updated of their whereabouts as soon as I spot them. Keep an eye on your phones!
+- Your role: Get to Potato Head Beach Club and be ready to intercept The Director! Do NOT let him get to the pool area, and keep him occupied at all costs!
+- Hubs' role: Get to Potato Head Beach Club and go straight to the sunken bar. Wait there for the thief to deliver the payload right into our hands.
+
+Once you receive the payload, LET'S SCRAM!"
+2024/03/14,Thursday morning,,"I've got my bags packed, and I'd suggest you both do too. Don't forget your disguises, swimwear, slippers, mosquito repellant, and sunscreen!"
+2024/03/15,Friday morning,,"Rise and shine, sleepyheads! Let's get this show on the road!"
+,Hour before flight,,My eyes and I are arriving early to scope the area. Are you both ready and clear on the plan?
+,Upon arrival,,Welcome to Bali! You've got an hour before you need to be at Potato Head Beach Club. Don't be late!
+,After I've left Chloe to go to the bar,,"SPOTTED: The Director is here early, and he's hanging out alone on the first floor deck overlooking the sea. That's your cue!"
+,,,<img>director.jpg</img>
+,,,"SPOTTED: The thief has arrived. Headed straight to the sunken bar. Keep the Director busy, DO NOT let him go no matter what!"
+,,,"Payload exchange complete! Your hubs has the ring, time to get outta here!"
+,,,Let's get back to the hotel quickly -- there'll be trouble once they realize what's just happened.
+,,,"WOOOOOH! We managed to intercept their delivery and have the payload back in our hands. That's a beautiful diamond, isn't it? I can see why they went to such lengths to acquire it.
+
+I'll keep an eye on The Magpie, I'm sure they aren't going to just sit still after they realize what's happened.
+
+In the meantime, make sure you get a good night's sleep! You've both done an amazing job tonight."
+,,,<img>ring.jpg</img>
+2024/03/16,,,<CALL AT 4AM>
+,,,"You need to get out of there!!!
+
+The Magpie is on the move, and they're searching every single hotel within a 5km radius of Potato Head!! I've arranged a local tour guide to take you away from your hotel and keep you moving from place to place. He doesn't know what's going on, but he'll keep you moving and hard to track. Just act like a tourist and blend in!"
+,,,UPDATE: The Magpie has officially called off the search! They've been searching for over 10 hours now and gotten nowhere. My network tells me the Director and the Thief are both headed back to the airport. I think it's done!
+,,,"It's official: The Magpie have boarded a plane and are on their way out of the country. We're safe now, and oh - I suppose congratulations are in order! You've really earned that ring. Who would've thought that your little proposal would turn into a weeks-long, crime-hunting, international romp?
+
+I, too, am pleased -- I've been trying to track The Magpie for years, but it wasn't until I started working with you two that I finally managed to get a handle on how their organization operates.
+
+We'll part ways from here, but you've been a real help to me and it's been a pleasure. Enjoy the rest of your honeymoon and stay out of trouble, won't you?
+
+You know you love me;
+XOXO, Gossip Girl. 😘"
+2024/03/17,,,"Mission accomplished!"
+,,,<img>accomplished.jpg</img>
